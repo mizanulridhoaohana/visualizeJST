@@ -55,7 +55,11 @@ def cnn_prediction(image_path):
     end_time = time.time()  # Record the end time
     execution_time = end_time - start_time  # Calculate the execution time
     st.write(f"CNN Prediction Execution Time: {execution_time:.4f} seconds")
-    return result(prediction)
+    if prediction == 0:
+        prediksi = "No Corrosion"
+    else:
+        prediksi = "Corrosion"
+    return prediksi
 
 def main():
     st.title("Comparison MLP vs CNN")
